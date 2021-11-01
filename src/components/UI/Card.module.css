@@ -1,0 +1,15 @@
+.card_theme {
+	background: #222222;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+}
+
+.card_theme p {
+	color: white !important;
+}
+
+.card_theme h1,
+.card_theme h2, 
+.card_theme h3 {
+	color: #ffba08 !important;
+}

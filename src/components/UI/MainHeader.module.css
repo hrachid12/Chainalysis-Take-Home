@@ -1,0 +1,23 @@
+.navitem {
+	margin: 0 1rem;
+	margin-top: 0.5rem;
+	width: 3rem;
+	text-decoration: none;
+}
+
+.header_theme {
+	width: 100%;
+	height: 4rem;
+	background-color: #222222;
+}
+.header_theme a {
+	color: white;
+	text-decoration: none;
+}
+
+.header_theme a:hover,
+.header_theme a:active,
+.header_theme a.active {
+	color: #ffba08;
+	text-decoration: none;
+}
