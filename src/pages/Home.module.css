@@ -2,3 +2,13 @@
     width: 200px;
     margin: 0 auto;
 }
+
+.home_main {
+    width: 60rem;
+    margin: 0 auto;
+    margin-top: 7rem;
+    background-color: #BBB;
+    color: black;
+    height: 500px;
+}
+
