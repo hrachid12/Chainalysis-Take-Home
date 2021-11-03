@@ -1,70 +1,18 @@
-import Card from '../components/UI/Card';
-import styles from './Bitcoin.module.css';
+import Stack from 'react-bootstrap/Stack';
 
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
-import Stack from 'react-bootstrap/Stack'
-import React from 'react';
+import Buy from '../components/Coin/Buy';
+import Sell from '../components/Coin/Sell';
+import styles from './Bitcoin.module.css';
 
 const Bitcoin: React.FC<{}> = () => {
     return (
-        <React.Fragment>
-            <Stack direction="horizontal">
-            <Card className={styles.bitcoin_main}>
-                <h1>Buy</h1>
-                <Stack gap={3}>
-                    <Card className={styles.bitcoin_tabs}>
-                        <Row>
-                            <Col md={10}>MARKETPLACE NAME</Col>
-                            <Col md={1}>PRICE</Col>
-                        </Row>
-                    </Card>
+        <div className={styles.bitcoin_main}>
+            <Stack direction="horizontal" gap={0}>
+                <Buy />
 
-                    <Card className={styles.bitcoin_tabs}>
-                        <Row>
-                            <Col md={11}>MARKETPLACE NAME</Col>
-                            <Col md={1}>PRICE</Col>
-                        </Row>
-                    </Card>
-                </Stack>
-
-                <h1 className={styles.h1_spacing}>Recommended</h1>
-                <Card className={styles.bitcoin_tabs}>
-                    <Row>
-                        <Col md={11}>MARKETPLACE NAME</Col>
-                        <Col md={1}>PRICE</Col>
-                    </Row>
-                </Card>
-            </Card>
-
-            <Card className={styles.bitcoin_main}>
-                <h1>Sell</h1>
-                <Stack gap={3}>
-                    <Card className={styles.bitcoin_tabs}>
-                        <Row>
-                            <Col md={11}>MARKETPLACE NAME</Col>
-                            <Col md={1}>PRICE</Col>
-                        </Row>
-                    </Card>
-
-                    <Card className={styles.bitcoin_tabs}>
-                        <Row>
-                            <Col md={11}>MARKETPLACE NAME</Col>
-                            <Col md={1}>PRICE</Col>
-                        </Row>
-                    </Card>
-                </Stack>
-
-                <h1 className={styles.h1_spacing}>Recommended</h1>
-                <Card className={styles.bitcoin_tabs}>
-                    <Row>
-                        <Col md={11}>MARKETPLACE NAME</Col>
-                        <Col md={1}>PRICE</Col>
-                    </Row>
-                </Card>
-            </Card>
+                <Sell />
             </Stack>
-        </React.Fragment>
+        </div>
     );
 }
 

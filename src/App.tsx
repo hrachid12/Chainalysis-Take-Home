@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Bitcoin from './pages/Bitcoin';
@@ -6,30 +7,35 @@ import MainBody from './components/UI/MainBody';
 import MainHeader from './components/UI/MainHeader';
 import Home from './pages/Home';
 
+import Coins from './models/Coins';
+
 function App() {
-  return (
-    <MainBody>
-      <MainHeader />
+	const [ coins, setCoins ] = useState<Coins[]>();
 
-      <main>
-        <Switch>
-			<Route path="/" exact>
-				<Home />
-			</Route>
+	
+	return (
+		<MainBody>
+		<MainHeader />
 
-			<Route path="/bitcoin" exact>
-				<Bitcoin />
-			</Route>
+		<main>
+			<Switch>
+				<Route path="/" exact>
+					<Home />
+				</Route>
 
-			<Route path="/ethereum" exact>
-				<Ethereum />
-			</Route>
+				<Route path="/bitcoin" exact>
+					<Bitcoin />
+				</Route>
 
-		</Switch>
+				<Route path="/ethereum" exact>
+					<Ethereum />
+				</Route>
 
-      </main>
-    </MainBody>
-  );
+			</Switch>
+
+		</main>
+		</MainBody>
+	);
 }
 
 export default App;

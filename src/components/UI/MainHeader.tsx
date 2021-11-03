@@ -8,7 +8,6 @@ const MainHeader: React.FC = () => {
 
 	return (
 		<Navbar expand="lg" variant="dark" className={styles.header_theme}>
-			{/* <Navbar.Brand style={{ color: 'white' }}>NBA Info</Navbar.Brand> */}
 			<Navbar.Toggle aria-controls="main-nav" />
 
 			<Navbar.Collapse id="main-nav">

@@ -1,4 +1,8 @@
-.eth_theme {
-    width: 200px;
+.eth_main {
+    width: 90%;
+    max-width: 90rem;
     margin: 0 auto;
+    margin-top: 2rem;
+    padding: 0 2rem 5rem 2rem;
+    background-color: #F5F5F5;
 }
