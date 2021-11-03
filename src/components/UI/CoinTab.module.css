@@ -1,0 +1,16 @@
+.tabs {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem;
+    color: black;
+    font-size: 1.3rem;
+}
+
+.tabs:hover {
+    background-color: #809BB3;
+    color: white;
+}
+
+.tabs:active {
+    transform: scale(0.99);
+}

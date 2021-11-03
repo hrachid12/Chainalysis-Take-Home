@@ -1,21 +1,33 @@
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Bitcoin from './pages/Bitcoin';
-import Ethereum from './pages/Ethereum';
 import MainBody from './components/UI/MainBody';
 import MainHeader from './components/UI/MainHeader';
 import Home from './pages/Home';
 
-import Coins from './models/Coins';
+import Coin from './models/Coin';
+import GetPrices from './requests/GetPrices';
+
+import { COIN_NAMES } from './CONSTANTS';
+import CoinPage from './pages/CoinPage';
 
 function App() {
-	const [ coins, setCoins ] = useState<Coins[]>();
+	const [ coins, setCoins ] = useState<Coin[]>([]);
 
-	
+	useEffect(() => {
+		COIN_NAMES.forEach((coin_name) => {
+			GetPrices(coin_name).then((new_coin) => {
+				setCoins((prevState) => {
+					return [ ...prevState, new_coin ];
+				});
+			});
+		});
+		
+	}, []);
+
 	return (
 		<MainBody>
-		<MainHeader />
+		<MainHeader coins={coins} />
 
 		<main>
 			<Switch>
@@ -23,16 +35,14 @@ function App() {
 					<Home />
 				</Route>
 
-				<Route path="/bitcoin" exact>
-					<Bitcoin />
-				</Route>
-
-				<Route path="/ethereum" exact>
-					<Ethereum />
-				</Route>
-
+				{coins.map((coin) => {
+					return (
+						<Route path={`/${coin.ticker}`}>
+							<CoinPage coin={coin} />
+						</Route>
+					)
+				})}
 			</Switch>
-
 		</main>
 		</MainBody>
 	);

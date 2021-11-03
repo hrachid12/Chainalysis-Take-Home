@@ -1,13 +1,8 @@
-.home_theme {
-    width: 200px;
-    margin: 0 auto;
-}
-
 .home_main {
-    width: 60rem;
+    width: 40rem;
     margin: 0 auto;
-    margin-top: 7rem;
-    background-color: #BBB;
+    margin-top: 5rem;
+    background-color: white;
     color: black;
     height: 500px;
 }

@@ -4,7 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 
 import styles from './MainHeader.module.css';
 
-const MainHeader: React.FC = () => {
+import Coin from '../../models/Coin';
+
+const MainHeader: React.FC<{ coins: Coin[]}> = (props) => {
 
 	return (
 		<Navbar expand="lg" variant="dark" className={styles.header_theme}>
@@ -13,8 +15,12 @@ const MainHeader: React.FC = () => {
 			<Navbar.Collapse id="main-nav">
 				<Nav className="mr-auto">
 					<NavLink exact activeClassName={styles.active} className={styles.navitem} to="/">Home</NavLink>
-					<NavLink activeClassName={styles.active} className={styles.navitem} to="/bitcoin">Bitcoin</NavLink>
-					<NavLink activeClassName={styles.active} className={styles.navitem} to="/ethereum">Ethereum</NavLink>
+					
+					{props.coins.map((coin) => {
+					return (
+						<NavLink activeClassName={styles.active} className={styles.navitem} to={`/${coin.ticker}`}>{coin.name}</NavLink>
+					)
+					})}
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>
