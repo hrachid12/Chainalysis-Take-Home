@@ -8,7 +8,7 @@ import styles from './Coin.module.css';
 const Sell: React.FC<{coin: Coin}> = (props) => {
     return (
         <Card className={styles.coin_main}>
-            <h1>Sell Prices</h1>
+            <h2>Ask</h2>
             <Stack gap={3}>
                 <CoinTab value={props.coin.binance_sell} exchange="Binance" />
                 <CoinTab value={props.coin.cb_sell} exchange="Coinbase" />

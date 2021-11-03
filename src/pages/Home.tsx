@@ -1,12 +1,10 @@
-import Card from '../components/UI/Card';
 import styles from './Home.module.css';
 
 const Home: React.FC<{}> = () => {
     return (
-        <Card className={styles.home_main}>
-            <h1>Test</h1>
-            <p>Hello World</p>
-        </Card>
+        <div className={styles.home_main}>
+            <p>Designed and created by Hassan Rachid for Chainalysis' work assignment</p>
+        </div>
     );
 }
 

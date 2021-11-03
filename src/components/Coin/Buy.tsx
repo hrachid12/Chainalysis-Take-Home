@@ -9,7 +9,7 @@ import CoinTab from '../UI/CoinTab';
 const Buy: React.FC<{ coin: Coin }> = (props) => {
     return (
         <Card className={styles.coin_main}>
-            <h1>Buy Prices</h1>
+            <h2>Bid</h2>
             <Stack gap={3}>
                 <CoinTab value={props.coin.binance_buy} exchange="Binance" />
                 <CoinTab value={props.coin.cb_buy} exchange="Coinbase" />

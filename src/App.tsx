@@ -15,7 +15,7 @@ function App() {
 	const [ coins, setCoins ] = useState<Coin[]>([]);
 
 	useEffect(() => {
-		COIN_NAMES.forEach((coin_name) => {
+		COIN_NAMES.forEach(async (coin_name) => {
 			GetPrices(coin_name).then((new_coin) => {
 				setCoins((prevState) => {
 					return [ ...prevState, new_coin ];

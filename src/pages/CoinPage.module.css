@@ -2,7 +2,12 @@
     width: 90%;
     max-width: 90rem;
     margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: 4rem;
     padding: 0 2rem 5rem 2rem;
     background-color: #F5F5F5;
+}
+
+.cp_header {
+    color: #5C7C99;
+    margin-bottom: 0;
 }
